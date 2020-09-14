@@ -1,0 +1,138 @@
+ID 0x20 Critical: Needed otherwise "Er IU" is displayed, door ajar?
+ID 0x21 Critical: Needed otherwise "Er IU" is displayed, door ajar?
+ID 0x22 Critical: Needed otherwise "Er IU" is displayed, gear shift indicator
+ID 0x23 Critical: Needed otherwise "Er IU" is displayed (at least one line needed in datafile), door ajar?, temp?
+ID 0x40 Critical: Needed otherwise "Er IU" is displayed after a short period of time
+ID 0x80 Critical: Needed otherwise "Er IU" is displayed (needs a stream of data), door ajar?, fuel?
+
+ID 0x10 may not be needed
+ID 0x11 may not be needed
+ID 0x41 may not be needed
+ID 0x50 may not be needed
+ID 0x81 may not be needed
+ID 0x82 may not be needed
+ID 0x101 may not be needed
+ID 0x102 may not be needed
+ID 0x131 may not be needed
+-- These had no effect on the cluster at the moment --
+		   
+20:
+	Hex 6: 0x00 - No error
+		   0x01 & 0x09 - Er IU
+		   0x02 & 0x03 - Er HC
+		   0x04 & 0x05 - Er LC
+		   0x06 & 0x07 - Er --
+		   0x08 - Er EG
+		   0x10 - Er tC
+
+21:
+	Hex 0: 0xX0 to 0xX7 - Er SS
+	Hex 2: 0x01 - AT OIL TEMP ON
+		   0x02 - AT OIL TEMP slow flashing
+		   0x03 - AT OIL TEMP rapid flashing
+	Hex 4 & 5: Denotes speed, must match wave pulse speed or "Er SP" is set (see bottom)
+	Hex 6: 0x08 to 0x0F - AL oF displayed
+		   0x10 to 0x17 - AL on displayed
+		   0x18 to 0x1F - AL Er displayed
+		   0x20 to 0x3F - PA oF displayed
+		   0x40 to 0x5F - PA on displayed
+		   0x60 to 0x7F - PA Er displayed
+		   Cycle repeats at 0x88
+		   
+22:
+	Hex 0: 0x01 - CRUISE ON
+		   0x02 - SET ON
+		   0x03 - CURISE and SET ON
+	Hex 1: 0xX1 - 1 is displayed on manual indicator
+		   0xX2 - 2 ""
+		   0xX3 - 3 ""
+		   0xX4 - 4 ""
+		   0xX5 - 5 ""
+		   0xX6 - E ""
+		   0xX7 - - ""
+		   0xX8 - ^ ""
+		   0xX9 - ^1 ""
+		   0xXA - ^2 ""
+		   0xXB - ^3 ""
+		   0xXC - ^4 ""
+		   0xXD - ^5 ""
+		   0xXE - ^E ""
+		   0xXF - ^- ""
+		   0x1X - \/ ""
+		   0x2X and 0x3X - Repetitive Beeping
+		   0x5X - chirp and \/ lights up (set to 0, then to 5)
+	Hex 2: 0xX4 - D
+		   0xX5 - N
+		   0xX6 - R
+		   0xX7 - P
+		   
+23:
+	Hex 1: 0x01 - SPORT ON
+		   0x02 - SPORT slow flashing
+		   0x03 - SPORT rapid flashing
+		   0x08 - AWD ON
+		   0x09 - AWD and SPORT ON
+		   0x0A - AWD ON, SPORT slow flashing
+		   0x0B - AWD ON, SPORT rapid flashing
+		   0x10 to 0x17 - AWD slow flashing
+		   0x2X - Fog lights
+		   0x3X - Fog ligts and AWD slow flashing
+	Hex 3: 0x01 - Driver door ajar
+		   0x02 - Top-right door open
+		   0x03 - Both top doors open
+		   0x04 - Bottom-right door open
+		   0x05 - Driver's and bottom-right door open
+		   0x06 - Both right side doors open
+		   0x07 - "" and driver's door
+		   0x08 - Bottom-left door open
+		   0x09 - Both left side doors open
+		   0x0A - Bottom-left and top-right doors open
+		   0x0B - Both left side and ""
+		   0x0C - Both bottom doors are open
+		   0x0D - Both left side and bottom-right doors open
+		   0x0E - Both bottom and top-right doors open
+		   0x0F - All doors are open
+		   0x1X - Trunk is open
+		   0x2X - Bright button pressed (only works when lights are on)
+		   0x3X - Bright button pressed and trunk open
+	Hex 4: Brightness (0x00 - 0xFF) (only works when lights are on - cluster acknowledges when changed by 0x07)
+	Hex 7: 0x00 - Water temp gauge bottoms out
+		   0x54 - Water temp gauge lines up with C
+		   0x68 - Water temp gauge lines up with black line close to C
+		   0x7E - Water temp gauge is between H and C
+		   0x7F to 0x8C - Water temp gauge remains between H and C
+		   0x8D - Water temp gauge starts moving again
+		   0x88 - Water temp gauge is between H and C
+		   0x95 - Water temp gauge lines up with black line close to H
+		   0x9F - Water temp gauge enters red zone
+		   0xA7 - Water temp gauge lines up with H
+		   0xA9 - Water temp gauge maxes out
+		   
+80:	Do not attempt to write to hex 7, trips "Er IU"
+	Hex 0: Fuel gauge tends to have a delayed response
+		   0x0A - Fuel gauge full
+		   0x20 - Fuel gauge begins to go from full
+		   0x22 - Fuel gauge lines up with F
+		   0x50 - Fuel gauge shows 3/4
+		   0x85 - Fuel gauge shows 2/4
+		   0xBC - Fuel gauge shows 1/4
+		   0xCF - Low fuel light illuminates (1/4 < f < 1/8)
+		   0xFF - Low fuel light blinks
+
+21 Speed Hex 4 & 5:
+	  0 MPH:  0  0 - 0x000
+	 10 MPH:  B  1 - 0x10B
+	 20 MPH: 39  2 - 0x239
+	 30 MPH: 56  3 - 
+	 40 MPH: 60  4
+	 50 MPH: 8F  5
+	 60 MPH: AB  6
+	 70 MPH: B6  7
+	 80 MPH: D2  8
+	 90 MPH: DD  9
+	100 MPH: F9  A
+	110 MPH: 16  C
+	120 MPH: 20  D
+	130 MPH: 3D  E
+	140 MPH: 6B  F
+	150 MPH: 76 10

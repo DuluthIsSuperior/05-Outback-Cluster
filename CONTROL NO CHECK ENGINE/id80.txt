@@ -1,0 +1,14 @@
+ID: 80, Data: 7 ff 0 0 fe 0 0 24 
+ID: 80, Data: 7 ff 0 0 fe 0 0 97 
+ID: 80, Data: 7 ff 0 0 fe 0 0 5e 
+ID: 80, Data: 7 ff 0 0 fe 0 0 b3 
+ID: 80, Data: 7 7f 0 0 fe 0 0 4e 
+ID: 80, Data: 7 7f 0 0 5b 0 0 bc 
+ID: 80, Data: 7 7f 0 0 5b 0 0 75 
+ID: 80, Data: 7 7f 0 0 5b 0 0 65 
+ID: 80, Data: 7 7f 0 0 5b 0 0 f6 
+ID: 80, Data: 7 7e 0 0 5b 0 0 d7 
+ID: 80, Data: 7 7f 0 0 5b 0 0 4 
+ID: 80, Data: 7 7f 0 0 5b 0 0 5e 
+ID: 80, Data: 7 ff 0 0 fe 0 0 53 
+ID: 80, Data: 7 ff 0 0 fe 0 0 9e 

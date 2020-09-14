@@ -1,0 +1,15 @@
+ID: 23, Data: 8 0 80 80 c0 fa 0 0 fe 
+ID: 23, Data: 8 0 80 80 c0 fa 0 0 fe 
+ID: 23, Data: 8 0 89 80 c0 fa 0 fd 6b 
+ID: 23, Data: 8 0 89 80 c0 fa ff fe 6b 
+ID: 23, Data: 8 0 89 80 c0 fa fa fd 6b 
+ID: 23, Data: 8 0 89 80 c0 fa fa fe 6b 
+ID: 23, Data: 8 0 89 80 c0 fa fa fe 6b 
+ID: 23, Data: 8 0 89 80 c0 fa fa fe 6b 
+ID: 23, Data: 8 0 89 80 c0 fa fa fe 6b 
+ID: 23, Data: 8 0 89 80 c0 fa fa fd 6b 
+ID: 23, Data: 8 0 89 80 c0 fa fa fe 6b 
+ID: 23, Data: 8 0 89 80 c0 fa fa fe 6b 
+ID: 23, Data: 8 0 89 80 c0 fa fa fd 6b 
+ID: 23, Data: 8 0 80 80 c0 fa 0 0 fe 
+ID: 23, Data: 8 0 80 80 c0 fa 0 0 fe 
